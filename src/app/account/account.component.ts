@@ -37,6 +37,18 @@ export class AccountComponent implements OnInit {
 
   // Method to edit user profile
   editProfile(user: FormGroup) {
+    // Check if all form fields are empty
+    const areAllFieldsEmpty = Object.keys(this.user.controls).every(
+      (controlName) => {
+        const control = this.user.get(controlName);
+        return !control.value;
+      }
+    );
+
+    if (areAllFieldsEmpty) {
+      alert('Please fill in at least one field to edit profile.');
+      return;
+    }
     // Find user data to be edited based on current user's email
     const editData = this.userData.find(
       (userData) => userData.Email === this.currentUser.Email
