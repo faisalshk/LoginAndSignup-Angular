@@ -51,8 +51,10 @@ export class LoginComponent implements OnInit {
     if (emailAlreadyExists || usernameAlreadyExists) {
       if (emailAlreadyExists) {
         alert('Email already exists, Please use a different Email Address');
+        this.signup.reset();
       } else {
         alert('Username already exists, Please use a different username');
+        this.signup.reset();
       }
     } else {
       // Add new user to users array and localStorage if email and username are unique
