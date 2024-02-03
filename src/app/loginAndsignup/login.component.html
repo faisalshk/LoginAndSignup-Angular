@@ -1,0 +1,61 @@
+<div class="parent">
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+    <div class="signup">
+      <form
+        [formGroup]="signup"
+        (ngSubmit)="signupData(signup)"
+        [noValidate]="false"
+      >
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input
+          formControlName="userName"
+          type="text"
+          name="txt"
+          placeholder="User name"
+          required=""
+        />
+        <input
+          formControlName="Email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+        />
+        <input
+          formControlName="password"
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          required=""
+        />
+        <button>Sign up</button>
+      </form>
+    </div>
+    <div class="login">
+      <form
+        [formGroup]="login"
+        (ngSubmit)="loginData(login)"
+        [noValidate]="false"
+      >
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          formControlName="Email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required=""
+        />
+        <input
+          formControlName="password"
+          type="password"
+          name="pswd"
+          placeholder="Password"
+          required=""
+        />
+        <button>Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

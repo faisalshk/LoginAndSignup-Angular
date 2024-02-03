@@ -1,0 +1,36 @@
+<div class="parent">
+  <h1 class="welcome">Welcome,{{ currentUser.userName }}</h1>
+  <div class="main">
+    <div class="signup">
+      <form [formGroup]="user" (ngSubmit)="editProfile(user)">
+        <label class="label" for="chk" aria-hidden="true">Edit Account </label>
+        <label>Username :</label>
+        <input
+          formControlName="userName"
+          type="text"
+          name="txt"
+          placeholder="{{ currentUser.userName }}"
+          required=""
+        />
+        <label>Email :</label>
+        <input
+          formControlName="Email"
+          type="email"
+          name="email"
+          placeholder="{{ currentUser.Email }}"
+          required=""
+        />
+        <label>Password :</label>
+        <input
+          formControlName="password"
+          type="password"
+          name="pswd"
+          placeholder="{{ currentUser.password }}"
+          required=""
+        />
+        <button>Edit Profile</button>
+      </form>
+      <button (click)="logout()">Log out</button>
+    </div>
+  </div>
+</div>
